@@ -22,10 +22,6 @@ def get_routes():
         ]
     }
 
-@app.get("/test")
-def test():
-    return controller.get_weights()
-
 @app.route("/image", methods=["POST"])
 def send_image():
     try:

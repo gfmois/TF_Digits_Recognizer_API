@@ -1,4 +1,4 @@
 run: app.py
 	flask run
-debug: app.py
+dev: app.py
 	flask run --debug

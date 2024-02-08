@@ -1,10 +1,11 @@
-from ..models.mobileNetModel import modelInstance
+from ..models.DigitDetectorModel import modelInstance
 
 class ImageService:
     @staticmethod
     def indentify_number(image):
         try:
-            return modelInstance.indentify_number(image)
+            predict = modelInstance.predict(image)
+            return predict
         except Exception as e:
             return e
         

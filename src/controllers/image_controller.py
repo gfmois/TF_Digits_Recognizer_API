@@ -54,13 +54,17 @@ class ImageController:
             # Get image dimensions
             image_bytes = BytesIO(image.stream.read())
             img = Image.open(image_bytes)
-            img_shape = img.size
+            
+            number_predicted = ImageService.indentify_number(img)
+            
+            n_predicted = int(number_predicted[0])
+            probability = float(number_predicted[1])
         
-            response = { "number": ImageService.indentify_number(None), "status": 200, "img_shape": img_shape }
+            response = { "prediction": { "n_predicted": n_predicted, "probability": probability }, "status": 200 }
         
             return jsonify(response), status
         except Exception as e:
-            return str(e)
+            return jsonify(msg="An error occurred", error=str(e), status=500), 500
         
     def get_weights(self):
         try:

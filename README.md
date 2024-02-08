@@ -1,3 +1,16 @@
+# Documentation
+
+API with a number prediction model using images. The model is built with a neural network with convolutional layers using the `tensorflow` library.
+
+The model does not perform very well; it has issues with handwritten images. This API is a practice project for the specialization in Artificial Intelligence and Big Data.
+
+## Routes
+There are three routes in this API:
+- `HealthCheck`: `GET` Returns the server uptime (__`/health`__)
+- `Image`: `POST` When sending an `IMAGE`, it returns a `json` with the prediction of the sent number. (__`/image`__)
+- `Routes`: `GET` Returns all the routes of the API (__`/`__)
+
+
 # Documentación
 
 API con modelo de predicción de números usando imagenes, el modelo está hecho con una red neuronal con capas convolucionales usando la libreria `tensorflow`.

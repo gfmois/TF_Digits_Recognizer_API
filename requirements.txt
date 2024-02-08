@@ -1,6 +1,6 @@
 flask
 scikit-learn
+scikit-image
 tensorflow
 Pillow
 numpy
-scikit-image

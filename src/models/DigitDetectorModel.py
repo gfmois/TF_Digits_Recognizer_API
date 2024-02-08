@@ -1,6 +1,6 @@
 import random
 import tensorflow as tf
-import sys, os
+import os
 
 import numpy as np
 from PIL import Image
@@ -71,6 +71,14 @@ class DigitDetectorModel:
             raise Exception(e)
         
     def get_model_architecture(self, input_shape = (224, 224, 3)) -> Model:
+        """Constructs the model architecture, this method needs to improve to make custom architectures
+
+        Args:
+            input_shape (tuple, optional): _description_. Defaults to (224, 224, 3).
+
+        Returns:
+            Model: Model with the architecture formed
+        """
         input_layer = Input(input_shape)
 
         conv2d_1_0 = Conv2D(filters=32, padding="same", kernel_size=(3, 3), activation="relu")(input_layer)
@@ -93,6 +101,18 @@ class DigitDetectorModel:
         return model
         
     def train_model(self, seed = 17, loss = "sparse_categorical_crossentropy", optimizer = "adam", metrics = ["accuracy"]) -> History:
+        """
+        Train model with custom seed, loss, optimizer and metrics.
+
+        Args:
+            seed (int, optional): Seed setted to model fit. Defaults to 17.
+            loss (str, optional): loss function. Defaults to "sparse_categorical_crossentropy".
+            optimizer (str, optional): optimizer. Defaults to "adam".
+            metrics (list, optional): metrics to get. Defaults to ["accuracy"].
+
+        Returns:
+            History: History of the model fit
+        """
         np.random.seed(seed)
         tf.random.set_seed(seed)
         random.seed(seed)

@@ -12,8 +12,11 @@ There are three routes in this API:
 
 ## Docker
 To use it, first download the container with:
+
 > docker pull gfmois/py_digit_class_api
+
 Then lunch your first container with:
+
 > docker run -p 8080:5000 -w /app py_digit_class_api make
 
 # Documentación
@@ -30,6 +33,9 @@ Existen tres rutas en esta API:
 
 ## Docker
 Para usarlo, primero descarga el contenedor con el commando:
+
 > docker pull gfmois/py_digit_class_api
+
 Una vez descargado, lanza tu primer contenedor con:
+
 > docker run -p 8080:5000 -w /app py_digit_class_api make
